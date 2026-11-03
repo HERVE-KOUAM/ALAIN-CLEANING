@@ -1,0 +1,9 @@
+{
+  "name": "alain-cleaning",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Site vitrine ALAIN CLEANING - services de nettoyage professionnels",
+  "scripts": {
+    "build": "echo \"Site statique - aucun build necessaire\""
+  }
+}
