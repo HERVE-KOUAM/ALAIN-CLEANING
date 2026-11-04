@@ -241,3 +241,8 @@ h1, h2, h3, h4, h5, h6 { color: var(--deep); }
 
 /* Masquer la barre de progression du template lorsque l'attribut data-percent est absent des grands écrans de démo */
 html:not(.no-js) .skill_area .progress_bar > span { -webkit-transition: width 3s; transition: width 3s; }
+
+/* ---------- Statut du formulaire de contact ---------- */
+#form_status { margin: 0 0 18px; font-size: 15px; font-weight: 500; line-height: 1.5; }
+#form_status.success { color: #128d7d; }
+#form_status.error { color: #d64545; }
