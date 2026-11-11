@@ -1,0 +1,35 @@
+backend:
+  name: github
+  repo: HERVE-KOUAM/ALAIN-CLEANING
+  branch: master
+  # On utilise le mode "site" : Decap ouvre une Pull Request que vous fusionnez
+  # (voir onboarding flow ci-dessous). Alternative : Git Gateway avec le
+  # backend "github" + OAuth via un provider Netlify.
+
+# Mode d'enregistrement des changements.
+# "simple" = pousse direct sur la branche master (recommandé si pas de Netlify).
+# "editorial_workflow" = crée une Pull Request à réviser (recommandé pour éviter
+#   de casser la branche master).
+publish_mode: editorial_workflow
+media_folder: "images/blog"
+public_folder: "/images/blog"
+site_url: https://alaincleaning.azurewebsites.net
+display_url: https://alaincleaning.azurewebsites.net
+logo_url: /images/favicon.png
+
+collections:
+  - name: "posts"
+    label: "Articles de blog"
+    folder: "_posts"
+    create: true
+    slug: "{{slug}}"
+    editor:
+      preview: true
+    fields:
+      - { label: "Titre", name: "title", widget: "string" }
+      - { label: "Description (SEO)", name: "description", widget: "text" }
+      - { label: "Extrait (court)", name: "excerpt", widget: "text", required: false }
+      - { label: "Date de publication", name: "date", widget: "datetime" }
+      - { label: "Catégorie", name: "category", widget: "select", options: ["Nettoyage résidentiel", "Nettoyage commercial", "Conseils & astuces", "Désinfection"] }
+      - { label: "Image principale", name: "image", widget: "image", choose_url: true }
+      - { label: "Corps de l'article", name: "body", widget: "markdown" }

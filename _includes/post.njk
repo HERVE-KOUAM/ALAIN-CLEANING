@@ -1,0 +1,56 @@
+---
+layout: base.njk
+---
+{% set description = description or site.description %}
+{% set image = image or "/images/portfolio/portfolio-1.jpg" %}
+
+<section class="blog-hero">
+  <div class="container">
+    <div class="post-meta" style="color:#cfe3ee;font-size:14px">
+      <span><i class="fa fa-calendar"></i> {{ date | dateFr }}</span>
+      <span><i class="fa fa-tag"></i> {{ category }}</span>
+    </div>
+    <h1>{{ title }}</h1>
+    <p>{{ excerpt or description }}</p>
+  </div>
+</section>
+
+<section class="blog-body">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-9">
+        <a class="back-link" href="/blog/"><i class="fa fa-arrow-left"></i> Tous les articles</a>
+        {% if image %}<img class="post-hero-img" src="{{ image }}" alt="{{ title }} — ALAIN CLEANING GTA Oshawa">{% endif %}
+        <article class="blog-content">
+          {{ content | safe }}
+        </article>
+
+        <!-- Commentaires Giscus (GitHub Discussions) -->
+        <div class="giscus">
+          <h3>💬 Discuter de cet article</h3>
+          <script src="https://giscus.app/client.js"
+            data-repo="{{ site.github.giscusDataRepo }}"
+            data-repo-id="REMPLACER_REPO_ID"
+            data-category="Commentaires du blog"
+            data-category-id="REMPLACER_CATEGORY_ID"
+            data-mapping="pathname"
+            data-strict="0"
+            data-reactions-enabled="1"
+            data-emit-metadata="0"
+            data-input-position="top"
+            data-theme="light"
+            data-lang="fr"
+            crossorigin="anonymous"
+            async>
+          </script>
+        </div>
+
+        <div style="text-align:center;margin-top:34px;padding:26px;background:#eefcf9;border-radius:10px">
+          <h4 style="color:#0e2a47;font-weight:700;margin-bottom:8px">Besoin d'un nettoyage professionnel à GTA Oshawa ?</h4>
+          <p>Obtenez un devis gratuit pour votre résidence ou votre entreprise.</p>
+          <a href="/#contact" style="display:inline-block;background:#1ebba3;color:#fff;padding:13px 30px;border-radius:30px;text-decoration:none;font-weight:700;margin-top:6px">Demander un devis gratuit</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
