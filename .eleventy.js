@@ -1,9 +1,11 @@
 const { DateTime } = require("luxon");
 
 module.exports = function (eleventyConfig) {
-  // Exclure les dossiers de travail du build (ne pas copier dans dist)
+  // Exclure les dossiers de travail du build (ne pas copier dans _site)
   eleventyConfig.ignores.add("legacy/**");
   eleventyConfig.ignores.add("plans/**");
+  eleventyConfig.ignores.add("dist/**");
+  eleventyConfig.ignores.add("_site/**");
 
   // ---- Pass-through : fichiers statiques copiés tels quels, sans modification ----
   eleventyConfig.addPassthroughCopy("admin");
@@ -27,7 +29,7 @@ module.exports = function (eleventyConfig) {
   return {
     dir: {
       input: ".",
-      output: "dist",
+      output: "_site",
       includes: "_includes",
       data: "_data"
     },
